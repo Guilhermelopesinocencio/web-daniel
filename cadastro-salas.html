@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>Sessões</title>
+        <title>Salas</title>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
             rel="stylesheet">
@@ -53,35 +53,77 @@
         <hr>
 
         <div class="container mt-4">
-            <h2 class="page-title mb-3">Sessões Disponíveis</h2>
+            <h2>Cadastro de Salas</h2>
+
+            <form class="container mt-4 bg-dark text-light p-4 rounded border">
+
+                <div class="row">
+                    <!-- nome sala -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Nome da Sala *</label>
+                        <input type="text" id="nome" class="form-control"
+                            placeholder="Ex: Sala 1, Sala VIP">
+                    </div>
+
+                    <!-- Capacidade -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Capacidade *</label>
+                        <input type="number" id="capacidade"
+                            class="form-control" placeholder="100" min="1">
+                    </div>
+
+                    <!-- Tipo -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Tipo *</label>
+                        <select id="tipo" class="form-select">
+                            <option value>Selecione</option>
+                            <option value="2D">2D</option>
+                            <option value="3D">3D</option>
+                            <option value="IMAX">IMAX</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Botão -->
+                <div class="text-end">
+                    <button type="submit" class="btn btn-light">
+                        Salvar Filme
+                    </button>
+                </div>
+
+            </form>
+
         </div>
 
-        <div class="container pb-5">
+        <!-- LISTAGEM -->
+        <div class="container mt-5">
 
-            <!-- TABELA (dados combinados: Filme, Sala, Data/Hora, Preço + botão Comprar) -->
-            <div class="table-responsive mb-5">
-                <table class="table table-dark table-hover align-middle">
+            <h5 class="page-title mb-4">Salas Cadastradas</h5>
+
+            <div class="table-responsive">
+                <table class="table table-dark table-hover">
                     <thead>
                         <tr>
-                            <th>Filme (título)</th>
-                            <th>Sala (nome)</th>
-                            <th>Data e Hora</th>
-                            <th>Preço</th>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Capacidade</th>
+                            <th>Tipo</th>
                             <th>Ação</th>
                         </tr>
                     </thead>
-                    <tbody id="tabelaSessoes">
+                    <tbody id="tabelaFilmes">
                         <tr>
-                            <td colspan="5"
+                            <td colspan="7"
                                 class="text-center text-secondary py-4">
-                                Nenhuma sessão disponível.
+                                Nenhum sala cadastrada ainda.
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
         </div>
 
-        <script src="js/listagem.js"></script>
+        <script src="js/salas.js"></script>
     </body>
 </html>
